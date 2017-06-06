@@ -12,11 +12,13 @@ class Qingsdk
     }
     /**
      * 生产签名，将公告参数进行拼接生产签名
+     * @param $param
      * @return mixed|string
      */
-    private function sign()
+    private function sign($param)
     {
         $sign_arr = $this->getCommonParam();
+        $sign_arr = array_merge($sign_arr,$param);
         //按参数名进行升序排列
         ksort($sign_arr);
 
@@ -73,7 +75,7 @@ class Qingsdk
     {
         $param_common = $this->getCommonParam();
         $param_common = array_merge($param_common,$param);
-        $query =  $this->request_url.'?'.\GuzzleHttp\Psr7\build_query($param_common)."&signature=".$this->sign();
+        $query =  $this->request_url.'?'.\GuzzleHttp\Psr7\build_query($param_common)."&signature=".$this->sign($param);
         $client = new \GuzzleHttp\Client();
         $res = $client->request($method,$query);
         return $this->response($res);
