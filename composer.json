@@ -1,7 +1,7 @@
 {
     "name":"wangge/qingcloud",
     "description":"Operating qingcloud server, switch machine and testing status",
-    "keywords":["qingcloud","operating"],
+    "keywords":["qingcloud","operating","php"],
     "authors": [
         {
             "name": "Wangge",
