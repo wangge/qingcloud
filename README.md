@@ -5,7 +5,7 @@ Operating qingcloud server, switch machine and testing status
 # 安装
 composer require wangge/qingcloud dev-master
 
-#使用
+# 使用
 <?php
 $access_key_id = 在青云申请的access_key_id
 $secret_access_key = 在青云申请的$secret_access_key
