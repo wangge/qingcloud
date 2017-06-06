@@ -2,9 +2,10 @@
     "name":"wangge/qingcloud",
     "description":"Operating qingcloud server, switch machine and testing status",
     "keywords":["qingcloud","operating","php"],
+    "version": "1.0.0",
     "authors": [
         {
-            "name": "Wangge",
+            "name": "wangge",
             "email": "wangge2010@163.com"
         }
     ],
