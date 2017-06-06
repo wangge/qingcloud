@@ -1,6 +1,8 @@
 # qingcloud
 Operating qingcloud server, switch machine and testing status
 
+
+# 安装  composer require wangge/qingcloud dev-master
 <?php
 $access_key_id =
 $secret_access_key=
