@@ -250,11 +250,16 @@ class ApiInstruct
     }
     private function setConfig()
     {
-        if(file_exists(__DIR__.'/../../../../config//qingcloud.php'))
-        {
-            $this->server->config = require_once(__DIR__.'/../../../../config//qingcloud.php'));
-        }else{
-            $this->server->config = require_once(__DIR__.'/../config/config.php');
+
+        try{
+            if(!file_exists(__DIR__.'/../../../../config/qingcloud.php'))
+            {
+                throw new \Exception('config/qingcloud.php not exit');
+            }else{
+                $this->server->config = require(__DIR__.'/../../../../config/qingcloud.php');
+            }
+        }catch(\Exception $e){
+            echo $e->getMessage();exit();
         }
     }
 }

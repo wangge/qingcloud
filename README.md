@@ -5,13 +5,19 @@ Operating qingcloud server, switch machine and testing status
 # 安装
 composer require wangge/qingcloud dev-master
 
+在根目录下 config下新建qingcloud.php，配置相关信息
+return [
+    'access_key_id'=> '',
+    'secret_access_key' => '',
+    'zone'=> '',
+];
 # 使用
 <?php
 $access_key_id = 在青云申请的access_key_id
 $secret_access_key = 在青云申请的$secret_access_key
 $zone = 青云机房区域 如：北京3区-A(pek3a)
 
-$s = new \Qing\Server\ApiInstruct($access_key_id ,$secret_access_key ,$zone);
+$s = new \Qing\Server\ApiInstruct();
 
 $response = $s->describeInstances(['status.0'=>'pending']);
 
