@@ -5,12 +5,11 @@ class ApiInstruct
 {
     public $server;
     private $err_code = 1100;
-    public function __construct($access_key_id ,$secret_access_key ,$zone = "pek3a")
+    public function __construct()
     {
         $this->server = new Qingsdk();
-        $this->server->config = array('access_key_id'=>$access_key_id ,'secret_access_key'=>$secret_access_key ,'zone'=>'pek3a');
+        $this->setConfig();
     }
-
     /**
      * 获取一个或多个主机
      * @param $param
@@ -248,5 +247,14 @@ class ApiInstruct
     private function formatErr($e)
     {
         return ['ret_code'=>$e->getCode(),'message'=>$e->getMessage()];
+    }
+    private function setConfig()
+    {
+        if(file_exists('/config/qingcloud.php'))
+        {
+            $this->server->config = require_once('/config/qingcloud.php');
+        }else{
+            $this->server->config = require_once(__DIR__.'/../config/config.php');
+        }
     }
 }
