@@ -94,10 +94,10 @@ class Qingsdk
             if($response['ret_code']){
                 return $this->getErr($response['ret_code']);
             }else{
-                return ['status'=>true,'msg'=>'请求成功','data'=>$response];
+                return $response;
             }
         }else{
-            return ['status'=>false,'msg'=>'请求失败','data'=>''];
+            return ['ret_code'=>'500','msg'=>'其他错误','data'=>''];
         }
     }
 
@@ -148,6 +148,6 @@ class Qingsdk
                 break;
 
         }
-        return ['status'=>false,'msg'=>$msg,'data'=>''];
+        return ['ret_code'=>$code,'msg'=>$msg,'data'=>''];
     }
 }

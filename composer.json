@@ -2,7 +2,7 @@
     "name":"wangge/qingcloud",
     "description":"Operating qingcloud server, switch machine and testing status",
     "keywords":["qingcloud","operating","php"],
-    "version": "1.0.2",
+    "version": "1.0.3",
     "authors": [
         {
             "name": "wangge",
